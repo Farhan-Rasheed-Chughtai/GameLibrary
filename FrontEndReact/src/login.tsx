@@ -29,7 +29,7 @@ async function handleSubmit(e: React.FormEvent) {
     try {
       // Replace with your auth call
     await new Promise((r) => setTimeout(r, 800))
-      console.log({ firstName, lastName, email, password })
+      console.log({ firstName, lastName, email })
       login();
       // on success: redirect or update app state
       navigate("/GameLibrary");
