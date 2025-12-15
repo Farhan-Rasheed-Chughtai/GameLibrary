@@ -31,7 +31,7 @@ async function handleSubmit(e: React.FormEvent) {
       login();
       // on success: redirect or update app state
       navigate("/GameLibrary");
-    } catch (err) {
+    } catch {
       setError("Login failed. Try again.")
     } finally {
       setLoading(false)
