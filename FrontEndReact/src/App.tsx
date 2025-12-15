@@ -7,7 +7,7 @@ import ProtectedRoute from "./ProtectedRoute";
 function App() {
 
   return (
-  <Router>
+  <Router basename="/GameLibrary">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Login" element={<Login />} />
