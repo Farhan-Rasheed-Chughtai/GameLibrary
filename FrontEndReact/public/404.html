@@ -22,6 +22,7 @@
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
       // Otherwise, leave pathSegmentsToKeep as 0.
+      // For this project, we use 1 to preserve the '/GameLibrary' repository name segment.
       var pathSegmentsToKeep = 1;
 
       var l = window.location;
