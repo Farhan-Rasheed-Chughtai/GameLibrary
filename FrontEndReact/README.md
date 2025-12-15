@@ -2,6 +2,28 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Deployment
+
+This application is configured to be deployed to GitHub Pages automatically. The deployment is handled by a GitHub Actions workflow that triggers on every push to the `main` branch.
+
+### Automatic Deployment
+
+The GitHub Actions workflow (`.github/workflows/deploy.yml`) automatically:
+1. Builds the application
+2. Deploys it to GitHub Pages
+
+Once deployed, the app will be available at: `https://farhan-rasheed-chughtai.github.io/GameLibrary/`
+
+### Manual Deployment
+
+To deploy manually, you would need to install the `gh-pages` package and run:
+```bash
+npm install gh-pages --save-dev
+npm run deploy
+```
+
+**Note:** The GitHub Actions workflow handles deployment automatically, so manual deployment is not typically necessary.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
