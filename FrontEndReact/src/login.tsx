@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
 export default function Login() {
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
@@ -18,8 +20,8 @@ async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
 
-    if (!email || !password) {
-      setError("Please enter both email and password.")
+    if (!firstName || !lastName || !email || !password) {
+      setError("Please fill out all fields.")
       return
     }
 
@@ -27,11 +29,11 @@ async function handleSubmit(e: React.FormEvent) {
     try {
       // Replace with your auth call
     await new Promise((r) => setTimeout(r, 800))
-      console.log({ email, password })
+      console.log({ firstName, lastName, email })
       login();
       // on success: redirect or update app state
       navigate("/GameLibrary");
-    } catch (err) {
+    } catch {
       setError("Login failed. Try again.")
     } finally {
       setLoading(false)
@@ -54,6 +56,34 @@ async function handleSubmit(e: React.FormEvent) {
                   {error}
                 </div>
               )}
+
+              <div>
+                <label className="block text-sm font-medium mb-1" htmlFor="firstName">
+                  First Name
+                </label>
+                <Input
+                  id="firstName"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="Your first name"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-1" htmlFor="lastName">
+                  Last Name
+                </label>
+                <Input
+                  id="lastName"
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder="Your last name"
+                  required
+                />
+              </div>
 
               <div>
                 <label className="block text-sm font-medium mb-1" htmlFor="email">
